@@ -10,19 +10,27 @@
   </head>
 
   <body>
-    <% if current_user.nil? %>
-      <a href="<%= new_session_url %>">Sign In</a>
-      <br>
-      <a href="<%= new_user_url %>">Create New User</a>
-    <% else %>
-      <%= current_user.email %>
-      <form action="<%= session_url %>" method="post">
-        <%= auth_token %>
-        <input type="hidden" name="_method" value="delete">
-        <input type="submit" value="Logout">
-      </form>
-    <% end %>
+    <div class='main-content'>
+      <h1 class="main-logo">Music App</h1>
 
-    <%= yield %>
+      <nav>
+        <% if current_user.nil? %>
+          <a href="<%= new_session_url %>">Sign In</a>
+          <br>
+          <a href="<%= new_user_url %>">Create New User</a>
+        <% else %>
+          <div class="user-details">
+            <p><%= current_user.email %></p>
+            <form action="<%= session_url %>" method="post">
+              <%= auth_token %>
+              <input type="hidden" name="_method" value="delete">
+              <input type="submit" value="Logout">
+            </form>
+          </div>
+        <% end %>
+      </nav>
+
+      <%= yield %>
+    </div>
   </body>
 </html>
