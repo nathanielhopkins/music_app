@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      @user.login!
+      login_user!(@user)
       render json: "Welcome to the site, #{@user.email}"
     else
       render json: @user.errors.full_messages
