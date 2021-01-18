@@ -1,0 +1,48 @@
+p, a, input, label {
+  font-family: 'Permanent Marker', sans-serif;
+  font-size: 18px;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Permanent Marker';
+}
+
+a, input[type='submit'] {
+
+  &:hover {
+    transition: .5s;
+    color: white;
+  }
+}
+
+.button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(196, 21, 21, 0.995);
+  margin-bottom: 10px;
+
+  &:hover {
+    color: white;
+    background-color: rgba(169, 18, 18, 0.995);
+    cursor: pointer;
+  }
+}
+
+input[type="submit"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(196, 21, 21, 0.995);
+  margin-bottom: 10px;
+
+  &:hover {
+    color: white;
+    background-color: rgba(169, 18, 18, 0.995);
+    cursor: pointer;
+  }
+}
+
+body {
+  background-color: rgb(121, 110, 64);
+}
