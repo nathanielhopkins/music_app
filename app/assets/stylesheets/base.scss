@@ -74,7 +74,7 @@ body {
     a {
       color: #FDDB61;
       display: flex;
-      justify-content: flex-end;
+      justify-content: right;
        
       &:hover {
         transition: .5s;
@@ -84,10 +84,17 @@ body {
 
     .user-detail {
       display: flex;
+      justify-content: right;
 
       p {
         margin: 10px;
       }
     }
   }
+}
+
+.page-header {
+  font-size: 40px;
+  color: #fad608;
+  margin-bottom: 25px;
 }
