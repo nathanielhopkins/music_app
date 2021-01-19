@@ -71,6 +71,17 @@ body {
     display: flex;
     justify-content: space-around;
 
+    a {
+      color: #FDDB61;
+      display: flex;
+      justify-content: flex-end;
+       
+      &:hover {
+        transition: .5s;
+        color: white;
+      }
+    }
+
     .user-detail {
       display: flex;
 
