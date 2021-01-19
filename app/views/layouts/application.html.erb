@@ -15,9 +15,9 @@
       <h1 class="main-logo">Music App</h1>
 
         <% if current_user.nil? %>
-          <ul class="sign-in-links">
-          <li><a data-turbolinks="false" href="<%= new_session_url %>">Sign In</a></li>
-          <li><a data-turbolinks="false" href="<%= new_user_url %>">Create New User</a></li>
+          <ul>
+          <li class="sign-in-links"><a data-turbolinks="false" href="<%= new_session_url %>">Sign In</a></li>
+          <li class="sign-in-links"><a data-turbolinks="false" href="<%= new_user_url %>">Create New User</a></li>
           </ul>
         <% else %>
           <div class="user-details">
