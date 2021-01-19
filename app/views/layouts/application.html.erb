@@ -11,13 +11,14 @@
 
   <body>
     <div class='main-content'>
+      <nav>
       <h1 class="main-logo">Music App</h1>
 
-      <nav>
         <% if current_user.nil? %>
-          <a href="<%= new_session_url %>">Sign In</a>
-          <br>
-          <a href="<%= new_user_url %>">Create New User</a>
+          <ul class="sign-in-links">
+          <li><a data-turbolinks="false" href="<%= new_session_url %>">Sign In</a></li>
+          <li><a data-turbolinks="false" href="<%= new_user_url %>">Create New User</a></li>
+          </ul>
         <% else %>
           <div class="user-details">
             <p><%= current_user.email %></p>
