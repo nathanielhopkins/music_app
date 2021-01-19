@@ -14,6 +14,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    if current_user.nil?
+      redirect_to new_session_url 
+    elsif current_user.id != params[:id].to_i
+      redirect_to user_url(current_user)
+    else
+      render :show
+    end
+  end
   private
   def user_params
     params.require(:user).permit(:email, :password)
