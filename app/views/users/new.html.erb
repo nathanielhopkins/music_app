@@ -1,14 +1,17 @@
 <h1 class="page-header">Create New User</h1>
 
-<form action="<%= users_url %>" method="post">
+<form class="credentials-form" action="<%= users_url %>" method="post">
   <%= auth_token %>
 
+  <p>
   <label for="email">Email:</label>
   <input id="email" type="text" name="user[email]">
-  <br>
+  </p>
+
+  <p>
   <label for="password">Password:</label>
   <input id="password" type="password" name="user[password]">
-  <br>
-  <br>
+  </p>
+  
   <input type="submit" value="Sign Up">
 </form>
