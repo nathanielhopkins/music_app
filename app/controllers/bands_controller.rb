@@ -1,6 +1,7 @@
 class BandsController < ApplicationController
   def index
-    render json: Band.all
+    @bands = Band.all
+    render :index
   end
 
   def show
