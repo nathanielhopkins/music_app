@@ -24,6 +24,10 @@ a, input[type='submit'] {
   background-color: rgba(196, 21, 21, 0.995);
   margin-bottom: 10px;
 
+  a {
+    color: #FDDB61;
+  }
+
   &:hover {
     color: white;
     background-color: rgba(169, 18, 18, 0.995);
