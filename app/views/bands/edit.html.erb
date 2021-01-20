@@ -1,0 +1,15 @@
+<h2 class="page-header">Edit Band</h2>
+
+<form class="form" action="<%= band_url(@band) %>" method="post">
+  <input type="hidden" name="_method" value="PATCH">
+  <%= auth_token %>
+
+  <label for="name">Band Name:</label>
+  <input id="name" type="text" name="band[name]" value="<%= @band.name %>">
+  <br>
+  <input type="submit" value="Edit Band">
+</form>
+
+<p class="button">
+    <a data-turbolinks="false" href="<%= bands_url %>">Back to Bands</a>
+</p>
