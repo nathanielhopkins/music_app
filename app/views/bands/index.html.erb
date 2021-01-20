@@ -1,8 +1,8 @@
 <h2 class="page-header">Bands</h2>
 
-<ul>
+<ul class="main-list">
   <% @bands.each do |band| %>
-    <li class="band-index">
+    <li>
         <a href="<%= band_url(band) %>"><%= band.name%></a>
     </li>
   <% end %>
