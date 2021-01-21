@@ -6,7 +6,6 @@ class AlbumsController < ApplicationController
   end
 
   def new
-    @bands = Band.all
     @band = Band.find_by(id: params[:band_id])
     @album = Album.new(band_id: params[:band_id])
     render :new
@@ -25,12 +24,13 @@ class AlbumsController < ApplicationController
   end
 
   def edit
-    @album = Album.find_by(params[:id])
+    @album = Album.find_by(id: params[:id])
+    @band = @album.band
     render :edit
   end
 
   def update
-    @album = Album.find_by(params[:id])
+    @album = Album.find_by(id: params[:id])
     
     if @album.update_attributes(album_params)
       redirect_to album_url(@album)
