@@ -1,6 +1,7 @@
-<h2 class="page-header">Add a New Album</h2>
+<h2 class="page-header">Edit Album</h2>
 
 <form class="form" action="<%= albums_url %>" method="POST">
+    <input type="hidden" name="_method" value="PATCH">
     <%= auth_token %>
 
     <p>
@@ -15,12 +16,12 @@
 
     <p>
         <label for="name">Album Title:</label>
-        <input id="name" name="album[name]">
+        <input id="name" name="album[name]" value="<%= @album.name %>">
     </p>
 
     <p>
         <label for="year">Year:</label>
-        <input id="year" type="number" name="album[year]">
+        <input id="year" type="number" name="album[year]" value="<%= @album.year %>">
     </p>
 
     <p>
@@ -28,19 +29,22 @@
         <input id="studio" 
           type="radio" 
           name="album[live_album]" 
-          value="f">
+          value="f"
+          <%= "checked" if !@album.live_album %>>
         <label for="live">Live Album</label>
         <input id="live" 
           type="radio" 
           name="album[live_album]" 
-          value="t">
+          value="t"
+          <%= "checked" if @album.live_album %>>
     </p>
 
-    <input type="submit" value="Add Album" </form>
+    <input type="submit" value="Add Album" 
+</form>
 
-    <br>
-    <br>
-    
-    <p class="button">
-        <a data-turbolinks="false" href="<%= band_url(@band) %>">Back to <%= @band.name %></a>
-    </p>
+<br>
+<br>
+
+<p class="button">
+    <a data-turbolinks="false" href="<%= band_url(@band) %>">Back to <%= @band.name %></a>
+</p>
