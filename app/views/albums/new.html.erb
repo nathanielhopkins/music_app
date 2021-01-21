@@ -1,46 +1,10 @@
-<h2 class="page-header">Add a New Album</h2>
+<h2 class="page-header">Add a New <%= @band.name %> Album</h2>
 
-<form class="form" action="<%= albums_url %>" method="POST">
-    <%= auth_token %>
+<%= render "form", album: @album %>
 
-    <p>
-        <label for="band-name">Band:</label>
-        <select id="band-name" name="album[band_id]">
-            <% @bands.each do |band| %>
-            <option value="<%= band.id %>" name="album[band_id]" <%= @album.band_id == band.id ? "selected" : "" %>>
-                <%= band.name %></option>
-            <% end %>
-        </select>
-    </p>
-
-    <p>
-        <label for="name">Album Title:</label>
-        <input id="name" name="album[name]">
-    </p>
-
-    <p>
-        <label for="year">Year:</label>
-        <input id="year" type="number" name="album[year]">
-    </p>
-
-    <p>
-        <label for="studio">Studio Album</label>
-        <input id="studio" 
-          type="radio" 
-          name="album[live_album]" 
-          value="f">
-        <label for="live">Live Album</label>
-        <input id="live" 
-          type="radio" 
-          name="album[live_album]" 
-          value="t">
-    </p>
-
-    <input type="submit" value="Add Album" </form>
-
-    <br>
-    <br>
+<br>
+<br>
     
-    <p class="button">
-        <a data-turbolinks="false" href="<%= band_url(@band) %>">Back to <%= @band.name %></a>
-    </p>
+<p class="button">
+    <a data-turbolinks="false" href="<%= band_url(@band) %>">Back to <%= @band.name %></a>
+</p>
