@@ -5,6 +5,23 @@
 <br>
 <br>
     
+<form class="button" action="<%= album_url(@album) %>" method="post">
+    <%= auth_token %>
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Album">
+</form>
+
+<br>
+
+  <a class="button" 
+    data-turbolinks="false" 
+    href="<%= album_url(@album) %>"
+    >Back to <%= @album.title %></a>
+
+<br>
+
 <p class="button">
-    <a data-turbolinks="false" href="<%= band_url(@band) %>">Back to <%= @band.name %></a>
+    <a data-turbolinks="false" 
+    href="<%= band_url(@band) %>"
+    >Back to <%= @band.name %></a>
 </p>
