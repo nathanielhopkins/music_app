@@ -1,9 +1,30 @@
 <h2 class="page-header"><%= @band.name %></h2>
 
+<ul class="main-list">
+    <% @band.albums.each do |album| %>
+    <li>
+        <a href="<%= album_url(album) %>"><%= album.title%></a>
+    </li>
+    <% end %>
+</ul>
+
+<br>
+<br>
 
 <p class="button">
-    <a data-turbolinks="false" href="<%= edit_band_url(@band) %>">Edit this Band</a>
+    <a data-turbolinks="false" 
+    href="<%= new_band_album_url(@band) %>"
+    >Add New <%= @band.name %> Album</a>
 </p>
+<br>
 <p class="button">
-    <a data-turbolinks="false" href="<%= bands_url %>">Back to Bands</a>
+    <a data-turbolinks="false" 
+    href="<%= edit_band_url(@band) %>"
+    >Edit this Band</a>
+</p>
+<br>
+<p class="button">
+    <a data-turbolinks="false" 
+    href="<%= bands_url %>"
+    >Back to Bands</a>
 </p>
