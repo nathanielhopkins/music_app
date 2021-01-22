@@ -1,0 +1,52 @@
+<h2 class="page-header">Add a Track to <%= @album.title %></h2>
+
+<form class="form" action="<%= tracks_url %>" method="POST">
+  <%= auth_token %>
+
+  <p>
+    <label for="album_id">Album:</label>
+    <select id="album_id" name="track[album_id]">
+      <% Album.all.each do |album| %>
+        <option value="<%= album.id %>" 
+        <%= "selected" if @track.album_id == album.id %>>
+      <% end %>
+    </select>
+  </p>
+
+  <p>
+    <label for="title">Title:</label>
+    <input id="title" type="text" name="track[title]">
+  </p>
+
+  <p>
+    <label for="ord">Track Number:</label>
+    <input id="ord" type="number" name="track[ord]">
+  </p>
+
+  <p>
+    <label for="regular">Regular Track</label>
+    <input id="regular" 
+      type="radio" 
+      name="track[bonus]" 
+      value="f"
+      <%= "checked" if !@album.bonus %>>
+    <label for="bonus">Bonus Track</label>
+    <input id="bonus"
+      type="radio"
+      name="track[bonus]"
+      <%= "checked" if @album.bonus %>>
+  </p>
+
+  <p>
+    <label for="lyrics">Lyrics(optional):</label>
+    <textarea><%= @album.lyrics %></textarea>
+  </p>
+
+  <input type="submit" value="Create Track">
+</form>
+
+<p class="button">
+    <a data-turbolinks="false" 
+      href="<%= album_url(@album) %>"
+      >Back to <%= @album.title %></a>
+</p>

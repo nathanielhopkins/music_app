@@ -1,0 +1,15 @@
+<h2 class="page-header"><%= @track.title %></h2>
+
+<%= @track.attributes %>
+
+<a class="button" 
+  data-turbolinks="false" 
+  href="<%= edit_track_url(@track) %>"
+  >Edit Track</a>
+
+<br>
+
+<a class="button" 
+  data-turbolinks="false" 
+  href="<%= album_url(@track.album) %>"
+  >Back to <%= @track.album.title %></a>

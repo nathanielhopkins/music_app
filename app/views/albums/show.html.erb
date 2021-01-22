@@ -3,6 +3,13 @@
 <p><%= @album.attributes %></p>
 
   <a class="button" 
+    data-turbolinks="false" 
+    href="<%= new_album_track_url(@album) %>"
+    >Add a Track</a>
+    
+  <br>
+  
+  <a class="button" 
     data-turbolinks="false"
     href="<%= edit_album_url(@album) %>"
     >Edit Album</a>
