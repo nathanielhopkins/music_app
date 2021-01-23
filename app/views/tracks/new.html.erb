@@ -8,7 +8,8 @@
     <select id="album_id" name="track[album_id]">
       <% Album.all.each do |album| %>
         <option value="<%= album.id %>" 
-        <%= "selected" if @track.album_id == album.id %>>
+        <%= "selected" if @track.album_id == album.id %>
+        ><%= album.title %></option>
       <% end %>
     </select>
   </p>
@@ -29,21 +30,24 @@
       type="radio" 
       name="track[bonus]" 
       value="f"
-      <%= "checked" if !@album.bonus %>>
+      <%= "checked" if !@track.bonus %>>
     <label for="bonus">Bonus Track</label>
     <input id="bonus"
       type="radio"
       name="track[bonus]"
-      <%= "checked" if @album.bonus %>>
+      <%= "checked" if @track.bonus %>>
   </p>
 
   <p>
     <label for="lyrics">Lyrics(optional):</label>
-    <textarea><%= @album.lyrics %></textarea>
+    <textarea><%= @track.lyrics %></textarea>
   </p>
 
   <input type="submit" value="Create Track">
 </form>
+
+<br>
+<br>
 
 <p class="button">
     <a data-turbolinks="false" 
