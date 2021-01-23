@@ -11,7 +11,15 @@ class TracksController < ApplicationController
   end
 
   def create
-      
+    @track = Track.new(track_params)
+
+    if @track.save
+      redirect_to track_url(@track)
+    else
+      @album = @track.album
+      flash.now[:errors] = @track.errors.full_messages
+      render :new
+    end
   end
 
   def edit
