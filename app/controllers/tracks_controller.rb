@@ -5,7 +5,9 @@ class TracksController < ApplicationController
   end
 
   def new
-      
+    @album = Album.find_by(id: params[:album_id])
+    @track = Track.new(album_id: params[:album_id])
+    render :new
   end
 
   def create
