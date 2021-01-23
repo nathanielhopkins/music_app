@@ -1,6 +1,29 @@
 <h2 class="page-header"><%= @album.title %></h2>
 
-<p><%= @album.attributes %></p>
+<h2 class="sub-header">Album Info</h2>
+<p>Band: <%= @album.band.name %></p>
+<p>Year: <%= @album.year %></p>
+<p>Type: <%= @album.live_album ? "Live" : "Studio" %></p>
+
+<br>
+
+<h2 class="sub-header">Tracks</h2>
+<% if @album.tracks.length > 0 %>
+  <ul class="main-list">
+    <% @album.tracks.order(:ord).each do |track| %>
+      <li>
+        <a data-turbolinks="false"
+          href="<%= track_url(track) %>"
+        ><%= track.ord %>. <%= track.title %></a>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No tracks listed.</p>
+<% end %>
+
+<br>
+<br>
 
   <a class="button" 
     data-turbolinks="false" 
