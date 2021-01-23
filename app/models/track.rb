@@ -10,7 +10,7 @@ class Track < ApplicationRecord
     primary_key: :id
   )
 
-  belongs_to(
+  has_one(
     :band,
     through: :album,
     source: :band
