@@ -1,6 +1,16 @@
 <h2 class="page-header"><%= @track.title %></h2>
 
-<%= @track.attributes %>
+<h3 class="sub-header">Track Info</h3>
+<p>Album: <%= @track.album.title %></p>
+<p>Track No: <%= @track.ord %></p>
+<p>Track Type: <%= @track.bonus ? "Bonus" : "Standard" %></p>
+<% if @track.lyrics %>
+  <p>Lyrics:</p>
+  <p><%= @track.lyrics %></p>
+<% end %>
+
+<br>
+<br>
 
 <a class="button" 
   data-turbolinks="false" 
