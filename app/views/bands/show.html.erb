@@ -1,7 +1,7 @@
 <h2 class="page-header"><%= @band.name %></h2>
 
 <ul class="main-list">
-    <% @band.albums.each do |album| %>
+    <% @band.albums.order(:year).each do |album| %>
     <li>
         <a href="<%= album_url(album) %>"><%= album.title%></a>
     </li>
