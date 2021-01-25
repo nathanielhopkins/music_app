@@ -10,11 +10,16 @@
   <input type="submit" value="Edit Band">
 </form>
 
-<form class="button" action="<%= band_url(@band) %>" method="post">
+<br>
+<br>
+
+<form action="<%= band_url(@band) %>" method="post">
   <%= auth_token %>
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value="Delete Band">
 </form>
+
+<br>
 
 <p class="button">
     <a data-turbolinks="false" href="<%= bands_url %>">Back to Bands</a>
