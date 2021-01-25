@@ -1,1 +1,7 @@
-<p>Welcome back, <%= current_user.email %>!</p>
+<p>Successfully logged in as: <%= current_user.email %>!</p>
+<br>
+<br>
+<a class="button" 
+  data-turbolinks="false" 
+  href="<%= bands_url %>"
+  >Go to Bands</a>
