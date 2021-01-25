@@ -12,9 +12,12 @@ class NotesController < ApplicationController
 
   def destroy
     @note = Note.find_by(id: params[:id])
-    @note.destroy if @note.user_id == current_user.id
-
-    redirect_to track_url(@note.track_id)
+    if @note.user_id == current_user.id
+      @note.destroy 
+      redirect_to track_url(@note.track_id)
+    else
+      render text: "Nice try, but you don't have permission to delete that."
+    end
   end
 
   private
