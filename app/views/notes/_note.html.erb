@@ -3,5 +3,13 @@
   <div class="note-item-info">
     <p>-<%= note.author.email %></p>
   </div>
+  <% if note.user_id == current_user.id %>
+    <form action="<%= note_url(note) %>" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <%= auth_token %>
+
+      <input type="submit" value="Delete Note">
+    </form>
+  <% end %>
   <br>
 </div>
