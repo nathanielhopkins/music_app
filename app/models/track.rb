@@ -3,6 +3,14 @@ class Track < ApplicationRecord
   validates :bonus, inclusion: { in: [true, false]}
   validates :ord, uniqueness: { scope: :album_id }
 
+  has_many(
+    :notes,
+    dependent: :destroy,
+    class_name: "Note",
+    foreign_key: :track_id,
+    primary_key: :id
+  )
+
   belongs_to(
     :album,
     class_name: "Album",
