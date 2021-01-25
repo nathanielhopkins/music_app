@@ -8,5 +8,5 @@ Rails.application.routes.draw do
     resources :tracks, only: [:new]
   end
   resources :tracks, except: [:new, :index]
-  resources :notes, only: [:create]
+  resources :notes, only: [:create, :destroy]
 end
