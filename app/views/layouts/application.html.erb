@@ -12,7 +12,9 @@
   <body>
     <div class='main-content'>
       <nav>
-      <h1 class="main-logo">Music App</h1>
+        <a class="main-logo" data-turbolinks="false"
+        href="<%= bands_url %>"
+        >Music App</a>
 
         <% if current_user.nil? %>
           <ul>
