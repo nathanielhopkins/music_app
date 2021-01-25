@@ -10,6 +10,14 @@
 <% end %>
 
 <br>
+
+<h4 class='sub-header'>Notes</h4>
+
+<% @track.notes.each do |note| %>
+  <%= render "note/note", note: note %>
+<% end %>
+
+<br>
 <br>
 
 <a class="button" 
