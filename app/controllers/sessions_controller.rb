@@ -13,13 +13,15 @@ class SessionsController < ApplicationController
       render :new
     else
       login_user!(user)
-      redirect_to user_url(user)
+      flash[:notices] = "Successfully logged in as: #{user.email}"
+      redirect_to bands_url
     end
   end
 
   def destroy
     current_user.reset_session_token!
     session[:session_token] = nil
+    flash[:notices] = "Successfully logged out"
 
     redirect_to new_session_url
   end
