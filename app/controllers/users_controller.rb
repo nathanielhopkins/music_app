@@ -8,9 +8,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       login_user!(@user)
+      flash.now[:notice] = "#{user.email} has successfully registered."
       redirect_to user_url(@user)
     else
-      render json: @user.errors.full_messages
+      flash.now[:errors] = @user.errors.full_messages
+      render :new
     end
   end
 
