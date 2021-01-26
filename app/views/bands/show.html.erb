@@ -3,7 +3,9 @@
 <ul class="main-list">
     <% @band.albums.order(:year).each do |album| %>
     <li>
-        <a href="<%= album_url(album) %>"><%= album.title%></a>
+        <a data-turbolinks="false" 
+        href="<%= album_url(album) %>"
+        ><%= album.title%></a>
     </li>
     <% end %>
 </ul>

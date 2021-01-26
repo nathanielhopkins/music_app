@@ -3,7 +3,9 @@
 <ul class="main-list">
   <% @bands.each do |band| %>
     <li>
-        <a href="<%= band_url(band) %>"><%= band.name%></a>
+        <a href="<%= band_url(band) %>"
+          data-turbolinks="false"
+          ><%= band.name%></a>
     </li>
   <% end %>
 </ul>
